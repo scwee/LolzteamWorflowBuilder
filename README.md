@@ -1,19 +1,43 @@
 # Lolzteam Workflow Builder — визуальный конструктор сценариев для LOLZTEAM
 
-![tests](https://img.shields.io/badge/tests-46%20passed-brightgreen)
-![stack](https://img.shields.io/badge/stack-Next.js%20%C2%B7%20FastAPI%20%C2%B7%20Celery-blue)
-![license](https://img.shields.io/badge/license-MIT-blue)
+<p align="center">
+  <a href="https://github.com/scwee/LolzteamWorflowBuilder/actions/workflows/ci.yml"><img src="https://github.com/scwee/LolzteamWorflowBuilder/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <img src="https://img.shields.io/badge/stack-Next.js%20%C2%B7%20FastAPI%20%C2%B7%20Celery-blue" alt="stack" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="license" />
+</p>
 
-![LOLZTEAM](https://img.shields.io/badge/LOLZTEAM-MARKET-4caf50?style=for-the-badge)
-![Python](https://img.shields.io/badge/PYTHON-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FASTAPI-0.115%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/NEXT.JS-WEB%20APP-black?style=for-the-badge&logo=nextdotjs&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/LOLZTEAM-MARKET-4caf50?style=for-the-badge" alt="LOLZTEAM" />
+  <img src="https://img.shields.io/badge/PYTHON-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/FASTAPI-0.115%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/NEXT.JS-WEB%20APP-black?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+</p>
+
+<p align="center">
+  <img src="docs/images/banner.jpg" alt="Lolzteam Workflow Builder" width="720" />
+</p>
 
 **Lolzteam Workflow Builder** — веб-конструктор сценариев (как n8n) для [LZT Market API](https://lzt-market.readme.io/reference/information): canvas, ноды, запуски, токены.
 
 **Без логина:** открыл UI → добавил LZT-токен → работаешь.
 
-Репозиторий: https://github.com/scwee/LolzteamWorflowBuilder
+### Установка на VPS (одна команда)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/scwee/LolzteamWorflowBuilder/main/install.sh -o install.sh
+chmod +x install.sh && sudo bash install.sh
+```
+
+## Возможности
+
+| | |
+|---|---|
+| **Canvas** | drag-and-drop, IF / Switch / Merge, autosave |
+| **Триггеры** | Manual, Webhook, Loop / Cron |
+| **Market** | каталог LZT API, несколько токенов |
+| **Данные** | HTTP Request, File Source, переменные, parse/filter |
+| **Интеграции** | импорт OpenAPI → свои ноды |
+| **Запуски** | история executions, логи по нодам |
 
 ---
 
@@ -166,15 +190,6 @@ npm run dev
 Логина и регистрации нет: доступ к UI имеет любой, кто открыл URL инстанса. Ограничивайте сетевой доступ (firewall, VPN или закрытый хост).
 
 ---
-
-## Возможности
-
-- Canvas: drag-and-drop, IF / Switch / Merge, autosave
-- Триггеры: Manual, Webhook, Loop / Cron
-- LZT Market каталог, HTTP Request, File Source
-- Несколько LZT-токенов
-- OpenAPI-импорт
-- Executions в боковом меню
 
 ## Структура репо
 
