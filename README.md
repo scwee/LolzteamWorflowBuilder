@@ -1,14 +1,17 @@
-# Lolzteam Workflow Builder
+# Lolzteam Workflow Builder — визуальный конструктор сценариев для LOLZTEAM
 
-<p align="center">
-  <img src="docs/images/banner.png" alt="Lolzteam Workflow Builder" width="720" />
-</p>
+![tests](https://img.shields.io/badge/tests-46%20passed-brightgreen)
+![stack](https://img.shields.io/badge/stack-Next.js%20%C2%B7%20FastAPI%20%C2%B7%20Celery-blue)
+![license](https://img.shields.io/badge/license-MIT-blue)
 
-Визуальный конструктор сценариев для [LZT Market API](https://lzt-market.readme.io/reference/information) — как n8n: canvas, ноды, запуски, токены.
+![LOLZTEAM](https://img.shields.io/badge/LOLZTEAM-MARKET-4caf50?style=for-the-badge)
+![Python](https://img.shields.io/badge/PYTHON-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FASTAPI-0.115%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Next.js](https://img.shields.io/badge/NEXT.JS-WEB%20APP-black?style=for-the-badge&logo=nextdotjs&logoColor=white)
+
+**Lolzteam Workflow Builder** — веб-конструктор сценариев (как n8n) для [LZT Market API](https://lzt-market.readme.io/reference/information): canvas, ноды, запуски, токены.
 
 **Без логина:** открыл UI → добавил LZT-токен → работаешь.
-
-Стек: Next.js · FastAPI · PostgreSQL · Redis · Celery · Docker
 
 Репозиторий: https://github.com/scwee/LolzteamWorflowBuilder
 
