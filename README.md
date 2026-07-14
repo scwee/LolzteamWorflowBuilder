@@ -1,5 +1,9 @@
 # Lolzteam Workflow Builder
 
+<p align="center">
+  <img src="docs/images/banner.png" alt="Lolzteam Workflow Builder" width="720" />
+</p>
+
 Визуальный конструктор сценариев для [LZT Market API](https://lzt-market.readme.io/reference/information) — как n8n: canvas, ноды, запуски, токены.
 
 **Без логина:** открыл UI → добавил LZT-токен → работаешь.
