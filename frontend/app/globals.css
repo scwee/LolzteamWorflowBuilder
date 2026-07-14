@@ -1,0 +1,393 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+.light {
+  --background: 0 0% 96%;
+  --foreground: 0 0% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 12%;
+  --primary: 142 71% 45%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 92%;
+  --secondary-foreground: 0 0% 20%;
+  --muted: 0 0% 92%;
+  --muted-foreground: 0 0% 42%;
+  --accent: 0 0% 92%;
+  --accent-foreground: 0 0% 12%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 88%;
+  --input: 0 0% 88%;
+  --ring: 142 71% 45%;
+  --radius: 0.375rem;
+  --canvas: 0 0% 94%;
+  --panel: 0 0% 100%;
+  --success: 152 60% 40%;
+  --warning: 38 92% 50%;
+  --sidebar: 0 0% 97%;
+  --sidebar-foreground: 0 0% 12%;
+  --sidebar-muted: 0 0% 42%;
+  --sidebar-border: 0 0% 88%;
+  --sidebar-hover: 0 0% 92%;
+  --sidebar-active: 0 0% 90%;
+}
+
+.dark {
+  /* n8n-like flat dark + product green accent */
+  --background: 0 0% 8%; /* ~#141414 */
+  --foreground: 0 0% 92%;
+  --card: 0 0% 12%; /* ~#1e1e1e */
+  --card-foreground: 0 0% 92%;
+  --primary: 142 71% 45%; /* #22c55e */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 16%; /* ~#292929 */
+  --secondary-foreground: 0 0% 90%;
+  --muted: 0 0% 16%;
+  --muted-foreground: 0 0% 55%;
+  --accent: 0 0% 16%;
+  --accent-foreground: 0 0% 92%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 18%;
+  --input: 0 0% 18%;
+  --ring: 142 71% 45%;
+  --canvas: 0 0% 7%;
+  --panel: 0 0% 12%;
+  --success: 152 55% 45%;
+  --warning: 38 92% 50%;
+  --sidebar: 0 0% 10%; /* ~#1a1a1a */
+  --sidebar-foreground: 0 0% 90%;
+  --sidebar-muted: 0 0% 52%;
+  --sidebar-border: 0 0% 16%;
+  --sidebar-hover: 0 0% 14%;
+  --sidebar-active: 0 0% 16%;
+}
+
+* {
+  @apply border-border;
+}
+
+html {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-feature-settings: "ss01" on, "cv11" on;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Dot canvas (n8n-style) */
+.canvas-dots {
+  background-color: hsl(var(--background));
+  background-image: radial-gradient(hsl(var(--foreground) / 0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* React Flow — minimal canvas */
+.react-flow__background {
+  background-color: hsl(var(--canvas)) !important;
+}
+
+.react-flow__edge-path {
+  stroke: hsl(var(--foreground) / 0.35);
+  stroke-width: 2;
+}
+
+.react-flow__edge .react-flow__edge-path {
+  stroke: hsl(var(--foreground) / 0.35);
+}
+
+.react-flow__connection-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-width: 2 !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:focus .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: hsl(var(--primary));
+  stroke-width: 2.5;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke: hsl(var(--primary));
+  stroke-dasharray: 5 4;
+  animation: dash 0.7s linear infinite;
+}
+
+.react-flow__edge-textbg {
+  fill: hsl(var(--canvas));
+}
+
+.react-flow__arrowhead {
+  fill: hsl(var(--foreground) / 0.45);
+}
+
+.react-flow__edge.selected .react-flow__arrowhead,
+.react-flow__edge:hover .react-flow__arrowhead {
+  fill: hsl(var(--primary));
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -9;
+  }
+}
+
+.particle-edge .react-flow__edge-path {
+  stroke: hsl(var(--primary));
+  stroke-width: 2.5;
+}
+
+.edge-exec-active .react-flow__edge-path {
+  stroke: hsl(var(--primary)) !important;
+  stroke-width: 2.75 !important;
+  stroke-dasharray: 6 5;
+  animation: dash 0.55s linear infinite;
+  filter: drop-shadow(0 0 4px hsl(var(--primary) / 0.55));
+}
+
+.edge-exec-active .react-flow__arrowhead {
+  fill: hsl(var(--primary)) !important;
+}
+
+.edge-exec-done .react-flow__edge-path {
+  stroke: hsl(var(--success) / 0.75) !important;
+  stroke-width: 2.25 !important;
+}
+
+.edge-exec-done .react-flow__arrowhead {
+  fill: hsl(var(--success) / 0.75) !important;
+}
+
+.edge-exec-error .react-flow__edge-path {
+  stroke: hsl(var(--destructive)) !important;
+  stroke-width: 2.5 !important;
+}
+
+.node-exec-running {
+  border-color: hsl(var(--primary)) !important;
+  background: hsl(var(--primary) / 0.08);
+  box-shadow:
+    0 0 0 1px hsl(var(--primary) / 0.45),
+    0 0 18px hsl(var(--primary) / 0.28);
+}
+
+.node-exec-ring {
+  pointer-events: none;
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 1.5px solid hsl(var(--primary) / 0.55);
+  animation: node-pulse-ring 1.4s ease-out infinite;
+}
+
+.node-exec-done {
+  border-color: hsl(var(--success) / 0.65) !important;
+  box-shadow: 0 0 0 1px hsl(var(--success) / 0.25);
+}
+
+.node-exec-error {
+  border-color: hsl(var(--destructive)) !important;
+  background: hsl(var(--destructive) / 0.08);
+  box-shadow: 0 0 0 1px hsl(var(--destructive) / 0.35);
+}
+
+.node-selected-ring {
+  pointer-events: none;
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  border: 1.5px solid hsl(var(--primary) / 0.45);
+  box-shadow: 0 0 0 4px hsl(var(--primary) / 0.08);
+}
+
+/* n8n-like node icon badges: gradient + soft ring + top gloss */
+.node-icon-badge {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--node-icon-top) 0%, var(--node-icon) 48%, var(--node-icon-bottom) 100%);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--node-icon) 55%, transparent),
+    0 1px 2px rgba(0, 0, 0, 0.28),
+    0 4px 10px color-mix(in srgb, var(--node-icon) 28%, transparent);
+}
+
+.node-icon-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.06) 42%, transparent 58%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.node-icon-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.react-flow__node.selected .react-flow__resize-control {
+  border-color: hsl(var(--primary));
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toast-enter {
+  animation: toast-enter 0.22s ease-out;
+}
+
+.react-flow__node.exec-dim {
+  opacity: 0.45;
+  filter: grayscale(0.15);
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+.react-flow__node.exec-focus {
+  opacity: 1;
+  filter: none;
+  z-index: 5;
+}
+
+@keyframes node-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  70% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+}
+
+.react-flow__controls {
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+  box-shadow: none !important;
+  margin: 10px !important;
+}
+
+.react-flow__controls-button {
+  background: hsl(var(--card)) !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  fill: hsl(var(--foreground)) !important;
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.react-flow__controls-button:hover {
+  background: hsl(var(--accent)) !important;
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid hsl(var(--card)) !important;
+  background: hsl(var(--muted-foreground)) !important;
+  z-index: 10 !important;
+}
+
+.react-flow__handle-connecting,
+.react-flow__handle-valid {
+  background: hsl(var(--primary)) !important;
+  transform: scale(1.25);
+}
+
+.react-flow__node {
+  font-size: 12px;
+}
+
+.react-flow__attribution {
+  display: none !important;
+}
+
+.react-flow__selection {
+  background: hsl(var(--primary) / 0.08) !important;
+  border: 1px solid hsl(var(--primary) / 0.55) !important;
+}
+
+.react-flow__nodesselection-rect {
+  background: hsl(var(--primary) / 0.06) !important;
+  border: 1px dashed hsl(var(--primary) / 0.5) !important;
+}
+
+/* Sliding panels */
+@keyframes panel-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes panel-in-left {
+  from {
+    transform: translateX(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.panel-slide-right {
+  animation: panel-in-right 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.panel-slide-left {
+  animation: panel-in-left 0.2s ease-out;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.28s ease-out both;
+}

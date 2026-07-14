@@ -1,0 +1,16 @@
+node_modules
+**/node_modules
+**/dist
+**/.next
+.git
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.cursor
+**/__pycache__
+**/*.pyc
+**/.venv
+backend/.venv
+frontend/.next
